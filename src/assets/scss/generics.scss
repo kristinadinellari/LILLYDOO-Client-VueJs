@@ -1,0 +1,49 @@
+//html {
+//  @include boxSizing(border-box);
+//  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+//  font-size: 16px;
+//  word-spacing: 1px;
+//  -ms-text-size-adjust: 100%;
+//  -webkit-text-size-adjust: 100%;
+//  -moz-osx-font-smoothing: grayscale;
+//  -webkit-font-smoothing: antialiased;
+//}
+//
+//body{
+//  overflow-x: hidden;
+//  background-color: #f2f2f2;
+//}
+//
+//* {
+//  &,
+//  &:before,
+//  &:after {
+//    @include boxSizing(border-box);
+//    margin: 0;
+//    font-family: "Montserrat";
+//    font-size: 16px;
+//    word-spacing: 1px;
+//    -ms-text-size-adjust: 100%;
+//    -webkit-text-size-adjust: 100%;
+//    -moz-osx-font-smoothing: grayscale;
+//    -webkit-font-smoothing: antialiased;
+//  }
+//}
+//
+//button:focus, input:focus {
+//  outline: none;
+//}
+//
+//button {
+//  cursor: pointer;
+//  border: 0;
+//}
+//
+//ul {
+//  list-style-type: none;
+//}
+//
+//a {
+//  cursor: pointer;
+//  text-decoration: none;
+//}
