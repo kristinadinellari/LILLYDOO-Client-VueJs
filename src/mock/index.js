@@ -57,3 +57,24 @@ export const testPackage = {
   ],
   button: 'In den warenkorob legen'
 };
+
+export const testerContent = {
+  title: 'Dein Testpaket enthält',
+  items: [
+    {
+      title: '1O lillydo windeln',
+      img: require('@/assets/images/tp.jpg'),
+      details: [
+        'O % Parfume & Lotionen, 1OO % LILLYDOO Schutz',
+        'Extra weich und mit idealer Passform'
+      ]
+    },
+    {
+      title: '15 SENSETIVE FEUCHTTÜCHER10 ',
+      details: [
+        'O % Parfüme & PEGs, 1OO % biologisch abbaubar',
+        'Extra dickes und kompostierbares Tuch'
+      ]
+    }
+  ]
+};

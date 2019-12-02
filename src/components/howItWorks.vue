@@ -1,6 +1,6 @@
 <template>
-  <div class="how-it-works-component">
-    <div class="title">
+  <div class="how-it-works-component common-height">
+    <div class="common-title">
       {{content.title}}
     </div>
     <div class="steps-holder">

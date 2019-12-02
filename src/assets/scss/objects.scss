@@ -41,7 +41,6 @@
       display: none !important;
     }
   }
-
   .content-holder {
     @include flex;
     width: 100%;
@@ -121,6 +120,7 @@
   }
 }
 
+
 //how it works component
 .how-it-works-component {
   padding: 40px;
@@ -128,17 +128,6 @@
   flex-direction: column;
   background: #f7f7f7;
 
-  .title {
-    padding: 20px 0;
-    @include fontSizes(30);
-    width: 100%;
-    font-family: $font-family-cera-medium;
-    text-align: center;
-    margin-bottom: 40px;
-    @include on-mobile {
-      margin-bottom: 0 !important;
-    }
-  }
   .description {
     width: 70%;
   }
@@ -235,12 +224,6 @@
     .detailed-description {
       @include fontSizes(18);
       @include flex;
-      .point {
-        width: 5px;
-        height: 5px;
-        margin-right: 15px;
-        @include borderRadius(50%);
-      }
       p {
         width: calc(100% - 20px);
       }
@@ -333,3 +316,69 @@
     }
   }
 }
+
+//tester-container-component
+.tester-container-component {
+  width: 100%;
+  @include flex;
+  padding: 5% 0 0 0 ;
+  flex-direction: column;
+  .title {
+    width: 100%;
+  }
+  .tester-holder {
+    width: 100%;
+    @include flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .tester-container {
+      width: calc(100% / 2);
+      @include flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      @include transition(all 0.25s);
+      $step-sizes: 1220px 2, 860px 1, 700px 1, 480px 1;
+      @each $maxWidth, $slice in $step-sizes {
+        @media screen and (max-width: $maxWidth) {
+          width: calc(100% / #{$slice})!important;
+        }
+      }
+      @include on-tablet {
+        margin: 20px 0;
+      }
+      @include on-mobile {
+        margin: 20px 0;
+      }
+      .img-holder {
+        width: 30%;
+        img {
+          width: 90%;
+          object-fit: cover;
+        }
+      }
+      .content {
+        width: 65%;
+        @include flex;
+        flex-direction: column;
+        .title {
+          padding-bottom: 15px;
+          @include fontSizes(20);
+          font-family: $font-family-cera-medium;
+          font-weight: bold;
+          text-transform: uppercase;
+          span {
+            font-family: $title-font-family;
+          }
+        }
+        .description {
+          width: 100%;
+          font-family: $title-font-family;
+          @include fontSizes(18);
+          @include flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+

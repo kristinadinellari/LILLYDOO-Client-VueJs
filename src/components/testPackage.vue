@@ -1,5 +1,5 @@
 <template>
-  <div class="test-package-component">
+  <div class="test-package-component common-height">
     <section>
       <img :src="testT" alt="Test package">
     </section>
