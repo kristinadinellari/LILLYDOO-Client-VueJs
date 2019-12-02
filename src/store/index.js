@@ -5,11 +5,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    imgKey: '2-3'
   },
   mutations: {
+    setImgKey (state, key) {
+      state.imgKey = key
+    }
   },
-  actions: {
-  },
-  modules: {
+  getters: {
+    imgKey: state => state.imgKey
   }
 })

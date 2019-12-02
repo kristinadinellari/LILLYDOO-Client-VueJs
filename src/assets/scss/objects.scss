@@ -1,0 +1,335 @@
+//desktopBanner component
+.cover-image-holder {
+  height: 85vh;
+  width: 100%;
+  position: relative;
+  @include on-mobile {
+    height: 100vh;
+  }
+
+  .cover-image-desktop {
+    width: 100%;
+    min-height: 85vh;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include on-desktop {
+      display: block;
+    }
+    @include on-medium-desktop {
+      background-position: right;
+    }
+    @include on-mobile {
+      display: none;
+    }
+    @include on-tablet {
+      display: none;
+    }
+  }
+  .cover-image-mobile {
+    width: 100%;
+    min-height:  100vh;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include on-widescreen {
+      display: none;
+    }
+    @include on-desktop {
+      display: none !important;
+    }
+  }
+
+  .content-holder {
+    @include flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    @include on-mobile {
+      flex-direction: column;
+    }
+    @include on-tablet {
+      flex-direction: column;
+    }
+
+    section {
+      @include flex;
+      position: relative;
+      width: 50%;
+      height: 100%;
+
+      &:nth-child(1) {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        span {
+          @include fontSizes(54);
+          text-align: center;
+          font-family: $title-font-family;
+          margin-bottom: 10px;
+          @include on-mobile {
+            @include fontSizes(40);
+          }
+        }
+
+        button {
+          @include fontSizes(20);
+          background: $button-bg-color;
+          color: $button-color;
+          border: none;
+          text-transform: uppercase;
+          padding: 15px 20px;
+          margin: 30px 0 0 -50px;
+          @include on-mobile {
+            margin: 30px 0;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        justify-content: flex-end;
+        .cover-el-holder {
+          @include flex;
+          justify-content: flex-end;
+          height: 50%;
+          @include on-widescreen {
+            width: 90%;
+          }
+
+          img {
+            object-fit: contain;
+            height: auto;
+            @include transform(scale(.7));
+            right: 20px;
+            @include on-mobile {
+              @include transform(scale(.5));
+            }
+          }
+        }
+      }
+
+      @include on-mobile {
+        width: 100%;
+      }
+      @include on-tablet {
+        width: 100%;
+      }
+    }
+  }
+}
+
+//how it works component
+.how-it-works-component {
+  padding: 40px;
+  @include flex;
+  flex-direction: column;
+  background: #f7f7f7;
+
+  .title {
+    padding: 20px 0;
+    @include fontSizes(30);
+    width: 100%;
+    font-family: $font-family-cera-medium;
+    text-align: center;
+    margin-bottom: 40px;
+    @include on-mobile {
+      margin-bottom: 0 !important;
+    }
+  }
+  .description {
+    width: 70%;
+  }
+  .steps-holder{
+    @include flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 40px;
+
+    .step {
+      @include flex;
+      flex-direction: column;
+      align-items: center;
+      @include transition(all 0.25s);
+      width: calc((100% / 3) - 10px);
+      padding: 0 15px;
+      margin: 5px;
+      $step-sizes: 1220px 3, 950px 2, 700px 1, 480px 1;
+      @each $maxWidth, $slice in $step-sizes {
+        @media screen and (max-width: $maxWidth) {
+          width: calc((100% / #{$slice}) - 10px)!important;
+        }
+      }
+      h4 {
+        font-weight: 500;
+        font-size: 20px;
+        text-transform: uppercase;
+        padding: 10px 0;
+      }
+      p {
+        @include fontSizes(18);
+        text-align: center;
+      }
+
+      @include on-mobile {
+        margin-bottom: 50px;
+        padding: 0 !important;
+      }
+      .description {
+        padding-top: 30px;
+        color: $paragraph-color-second !important;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+//test package component
+.test-package-component {
+  width: 100%;
+  @include flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  @include on-mobile {
+    flex-direction: column;
+  }
+  @include on-tablet {
+    flex-direction: column;
+  }
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+  section {
+    &:nth-child(1n) {
+      width: 50%;
+    }
+    &:nth-child(2n) {
+      width: 40%;
+      padding: 20px;
+    }
+    @include on-mobile {
+      width: 100% !important;
+    }
+    @include on-tablet {
+      width: 100% !important;
+    }
+    .title {
+      @include fontSizes(30);
+      font-family: $font-family-cera-regular;
+      padding: 10px 0;
+    }
+    .subtitle {
+      @include fontSizes(18);
+      text-transform: uppercase;
+      font-family: $font-family-cera-regular;
+      padding: 5px 0 10px 0;
+    }
+    .description {
+      @include fontSizes(18);
+      padding: 20px 0;
+    }
+    .detailed-description {
+      @include fontSizes(18);
+      @include flex;
+      .point {
+        width: 5px;
+        height: 5px;
+        margin-right: 15px;
+        @include borderRadius(50%);
+      }
+      p {
+        width: calc(100% - 20px);
+      }
+      &:nth-child(1n) {
+        align-items: baseline;
+        color: $paragraph-color-second;
+        .point {
+          background: $paragraph-color-second;
+        }
+      }
+      &:nth-child(2n) {
+        align-items: center;
+        color: $color;
+        .point {
+          background: $color;
+        }
+        span {
+          color: $paragraph-color-second !important;
+        }
+      }
+    }
+    .sizes {
+      @include flex;
+      flex-wrap: wrap;
+      width: 100%;
+      padding: 10px 0;
+      .size {
+        @include flex;
+        @include transition(all .2s);
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 0;
+        color: $button-no-active;
+        border: 1px solid $button-no-active;
+        margin-right: 15px;
+        font-family: $font-family-cera-regular;
+        width: calc((100% / 5) - 15px);
+        &:last-child {
+          margin-right: 0 !important;
+        }
+        @include on-medium-desktop {
+          margin-top: 10px;
+        }
+
+        $sizes: 1300px 4, 1200px 3, 970px 5, 580px 4, 480px 3, 370px 2;
+
+        @each $maxWidth, $slice in $sizes {
+          @media screen and (max-width: $maxWidth) {
+            width: calc((100% / #{$slice}) - 15px)!important;
+          }
+        }
+        h4 {
+          font-weight: 500;
+          font-size: 20px;
+          text-transform: uppercase;
+          padding: 10px 0;
+        }
+        p {
+          @include fontSizes(18);
+          text-align: center;
+        }
+        &:hover {
+          background-color: $button-bg-color;
+          color: $button-color;
+          border: 1px solid $button-color !important;
+        }
+        span {
+          &:first-child {
+            @include fontSizes(24);
+          }
+        }
+      }
+      .activeSize {
+        background-color: $button-bg-color;
+        color: $button-color !important;
+        border: 1px solid $button-color !important;
+      }
+    }
+    button {
+      @include fontSizes(20);
+      width: 100%;
+      background: $button-bg-color;
+      color: $button-color;
+      border: none;
+      text-transform: uppercase;
+      padding: 15px 20px;
+      margin-top: 50px;
+    }
+  }
+}

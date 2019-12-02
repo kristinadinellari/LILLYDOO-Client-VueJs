@@ -7,11 +7,6 @@
   transition: $args;
 }
 
-@mixin delay($args...) {
-  -webkit-transition-delay: $args;
-  transition-delay: $args;
-}
-
 @mixin animation($args...){
   -webkit-animation: $args;
   animation: $args;
@@ -65,28 +60,6 @@
   user-select: $arg;
 }
 
-@mixin linearBackground ($args...) {
-  background: -webkit-linear-gradient($args); /* Safari 5.1-6.0 */
-  background: -o-linear-gradient($args); /* Opera 11.1-12.0 */
-  background: -moz-linear-gradient($args); /* Firefox 3.6-15 */
-  background: linear-gradient($args); /* Standard syntax */
-}
-
-@mixin keyframes($name) {
-  @-webkit-keyframes #{$name} {
-    @content;
-  }
-  @-moz-keyframes #{$name} {
-    @content;
-  }
-  @-ms-keyframes #{$name} {
-    @content;
-  }
-  @keyframes #{$name} {
-    @content;
-  }
-}
-
 @function calculateRem($size) {
   $remSize: $size / 16;
   @return #{$remSize}rem;
@@ -96,68 +69,12 @@
   font-size: $size; //Fallback in px
   font-size: calculateRem($size);
 }
-
-@mixin riseButtonGradient(){
-  background: rgb(96,134,193);
-  background: -moz-linear-gradient(45deg, rgba(10,177,230,1) 0%, rgba(10,177,230,1) 70%, rgba(41,242,155,1) 100%);
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(10,177,230,1)), color-stop(70%,rgba(10,177,230,1)), color-stop(100%,rgba(41,242,155,1)));
-  background: -webkit-linear-gradient(45deg, rgba(10,177,230,1) 0%, rgba(10,177,230,1) 70%, rgba(41,242,155,1) 100%);
-  background: -o-linear-gradient(45deg, rgba(10,177,230,1) 0%, rgba(10,177,230,1) 70%, rgba(41,242,155,1) 100%);
-  background: -ms-linear-gradient(45deg, rgba(10,177,230,1) 0%, rgba(10,177,230,1) 70%, rgba(41,242,155,1) 100%);
-  background: linear-gradient(45deg, rgba(10,177,230,1) 0%, rgba(10,177,230,1) 70%, rgba(41,242,155,1) 100%);
-  //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6086c1', endColorstr='#d66466',GradientType=1 );
-}
-
-@mixin single-transition($property:all, $speed:150ms, $ease:ease, $delay: 0s){
-  -webkit-transition: $property $speed $ease $delay;
-  transition: $property $speed $ease $delay;
-}
-
-/* Generic Mixins */
-@mixin placeholder() {
-  ::-webkit-input-placeholder {
-    @content;
-  }
-
-  :-moz-placeholder { /* Firefox 18- */
-    @content;
-  }
-
-  ::-moz-placeholder {  /* Firefox 19+ */
-    @content;
-  }
-
-  :-ms-input-placeholder {
-    @content;
-  }
-}
-
 /* Cross browser opacity */
 @mixin opacity($opacity) {
   opacity: $opacity;
   $opacity-ie: $opacity * 100;
   filter: alpha(opacity=$opacity-ie); //IE8
 }
-
-/* SVG background images with PNG and retina fallback */
-$image-path: '../img' !default;
-$fallback-extension: 'png' !default;
-$retina-suffix: '@2x';
-
-@mixin background-image($name, $size:false){
-  background-image: url(#{$image-path}/#{$name}.svg);
-  @if($size){
-    background-size: $size;
-  }
-  .no-svg &{
-    background-image: url(#{$image-path}/#{$name}.#{$fallback-extension});
-
-    @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-      background-image: url(#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension});
-    }
-  }
-}
-
 /* Media Queries */
 
 @mixin on-big-screen {
@@ -173,18 +90,18 @@ $retina-suffix: '@2x';
 }
 
 @mixin on-medium-desktop {
-  @media (max-width: 1225px) {
+  @media (max-width: 1300px) {
     @content;
   }
 }
 
-@mixin on-desktop { //using this
+@mixin on-desktop {
   @media screen and (min-width: 980px) and (max-width: 1225px) {
     @content;
   }
 }
 
-@mixin on-tablet { //using this
+@mixin on-tablet {
   @media screen and (max-width: 979px) and (min-width: 769px) {
     @content;
   }

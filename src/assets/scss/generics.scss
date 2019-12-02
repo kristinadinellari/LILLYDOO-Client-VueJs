@@ -1,49 +1,34 @@
-//html {
-//  @include boxSizing(border-box);
-//  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-//  font-size: 16px;
-//  word-spacing: 1px;
-//  -ms-text-size-adjust: 100%;
-//  -webkit-text-size-adjust: 100%;
-//  -moz-osx-font-smoothing: grayscale;
-//  -webkit-font-smoothing: antialiased;
-//}
-//
-//body{
-//  overflow-x: hidden;
-//  background-color: #f2f2f2;
-//}
-//
-//* {
-//  &,
-//  &:before,
-//  &:after {
-//    @include boxSizing(border-box);
-//    margin: 0;
-//    font-family: "Montserrat";
-//    font-size: 16px;
-//    word-spacing: 1px;
-//    -ms-text-size-adjust: 100%;
-//    -webkit-text-size-adjust: 100%;
-//    -moz-osx-font-smoothing: grayscale;
-//    -webkit-font-smoothing: antialiased;
-//  }
-//}
-//
-//button:focus, input:focus {
-//  outline: none;
-//}
-//
-//button {
-//  cursor: pointer;
-//  border: 0;
-//}
-//
-//ul {
-//  list-style-type: none;
-//}
-//
-//a {
-//  cursor: pointer;
-//  text-decoration: none;
-//}
+/* Box Sizing -- */
+html {
+  @include boxSizing(border-box);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+* {
+  &,
+  &:before,
+  &:after {
+    @include boxSizing(inherit);
+    line-height: normal;
+    margin:  0;
+  }
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+/* Reset -- */
+body,
+h1, h2, h3, h4, h5, h6,
+p, span {
+  font-family: $font-family-cera-medium;
+}
+
+a {
+  text-decoration: none;
+}

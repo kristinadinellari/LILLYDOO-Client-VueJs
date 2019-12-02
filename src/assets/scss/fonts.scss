@@ -1,4 +1,5 @@
-$cera-pro-path: "../assets/fonts/CeraPro" !default;
+$cera-pro-path: "assets/fonts/CeraPro" !default;
+$museo-pro-path: "assets/fonts/Museo" !default;
 
 @font-face {
   font-family: 'Cera Pro Light';
@@ -106,5 +107,16 @@ $cera-pro-path: "../assets/fonts/CeraPro" !default;
   url('#{$cera-pro-path}/CeraPro-Thin.ttf') format('truetype');
   font-weight: 100;
   font-style: normal;
+}
+
+//museoFont
+
+@font-face{
+  font-family:"Museo 300";
+  src:url("#{$museo-pro-path}/33e3dd38-a7c3-4a78-9660-90a0e7406419.eot?#iefix");
+  src:url("#{$museo-pro-path}/33e3dd38-a7c3-4a78-9660-90a0e7406419.eot?#iefix") format("eot"),
+  url("#{$museo-pro-path}/d9dabe05-624c-4f28-8eee-b3b6f1841abf.woff2") format("woff2"),
+  url("#{$museo-pro-path}/827f2f08-a8d3-40b2-9795-927b59905269.woff") format("woff"),
+  url("#{$museo-pro-path}/92143848-9290-4516-80fc-ebf83b053307.ttf") format("truetype");
 }
 

@@ -1,18 +1,19 @@
 <template>
   <div class="home">
-    <h2>Wie es funktioniert</h2>
+    <BannerDesktop/>
+    <TestPackage/>
+    <HowItWorks/>
+    <TesterContent/>
   </div>
 </template>
 <script>
   export default {
     name: 'home',
+    components: {
+      BannerDesktop: () => import('@/components/desktopBanner.vue'),
+      HowItWorks: () => import('@/components/howItWorks.vue'),
+      TestPackage: () => import('@/components/testPackage.vue'),
+      TesterContent: () => import('@/components/testerContent.vue')
+    }
   }
 </script>
-<style lang="scss">
-  @import '../assets/scss/app.scss';
-
-  h2 {
-    font-family: $font-family;
-    @include fontSizes(20);
-  }
-</style>
