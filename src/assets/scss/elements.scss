@@ -19,3 +19,23 @@
     margin-bottom: 0 !important;
   }
 }
+.common-content {
+  padding: 10px;
+}
+.big-screen {
+  @include on-mobile {
+    display: none;
+  }
+  @include on-tablet {
+    display: none;
+  }
+}
+
+.mobile {
+  @include on-widescreen {
+    display: none;
+  }
+  @include on-desktop {
+    display: none;
+  }
+}

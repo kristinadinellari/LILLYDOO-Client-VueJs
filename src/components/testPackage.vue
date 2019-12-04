@@ -1,5 +1,5 @@
 <template>
-  <div class="test-package-component common-height">
+  <div class="test-package-component common-height common-content">
     <section>
       <img :src="testT" alt="Test package">
     </section>
@@ -14,7 +14,8 @@
           <span>( {{size.imgKey}} KG )</span>
         </div>
       </div>
-      <p class="description">{{content.description}}</p>
+      <p class="description big-screen">{{content.description}}</p>
+      <p class="description mobile"> {{content.descriptionMobile}}</p>
       <div class="detailed-description" v-for="(detail, index) in content.details" :key="index">
         <div class="point"></div>
         <p v-html="detail"></p>

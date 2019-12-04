@@ -1,5 +1,5 @@
 <template>
-  <div class="how-it-works-component common-height">
+  <div class="how-it-works-component common-height common-content">
     <div class="common-title">
       {{content.title}}
     </div>

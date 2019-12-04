@@ -1,19 +1,14 @@
-/* Box Sizing -- */
 html {
   @include boxSizing(border-box);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-overflow-scrolling: touch;
 }
-
 
 * {
   &,
   &:before,
   &:after {
-    @include boxSizing(inherit);
-    line-height: normal;
-    margin:  0;
+    @include boxSizing(border-box);
+    padding: 0;
+    margin: 0;
   }
 }
 

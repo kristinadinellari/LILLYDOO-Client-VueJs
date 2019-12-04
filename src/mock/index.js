@@ -34,6 +34,7 @@ export const testPackage = {
   title: 'Unser gratis Testpaket',
   subtitle: 'wÄhle deine grÖsse',
   description: 'Test jetzt unsere Windeln und Feuchttucher. Wir zahlen die Produkte, Du nur den Versand',
+  descriptionMobile: 'Teste jetzt unsere Windeln und Feuchttücher – In Größe 1 – 3 enthält unser Testpaket unsere Feuchttücher mit 99 % Wasser, ab Gr. 4 erhälst Du unsere Sensitiven Feuchttücher. Wir zahlen die Produkte, Du den Verand.',
   sizes: [
     {
       imgKey: '2-3'
@@ -71,6 +72,7 @@ export const testerContent = {
     },
     {
       title: '15 SENSETIVE FEUCHTTÜCHER10 ',
+      titleMobile: '15 FEUCHTTÜCHER MIT 99 % WASSER ',
       details: [
         'O % Parfüme & PEGs, 1OO % biologisch abbaubar',
         'Extra dickes und kompostierbares Tuch'

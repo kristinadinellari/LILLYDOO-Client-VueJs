@@ -6,12 +6,6 @@
   -o-transition: $args;
   transition: $args;
 }
-
-@mixin animation($args...){
-  -webkit-animation: $args;
-  animation: $args;
-}
-
 @mixin transform($args...) {
   -webkit-transform: $args;
   -moz-transform: $args;
@@ -32,32 +26,12 @@
   -ms-border-radius: $radius;
   border-radius: $radius;
 }
-
-@mixin boxShadow($args...) {
-  -webkit-box-shadow: $args;
-  -moz-box-shadow: $args;
-  box-shadow: $args;
-}
-
 @mixin flex() {
   display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
   display: -ms-flexbox;      /* TWEENER - IE 10 */
   display: -webkit-flex;     /* NEW - Chrome */
   display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
-}
-
-@mixin skew($angle) {
-  -webkit-transform: skew(#{$angle}deg) !important;
-  -moz-transform: skew(#{$angle}deg) !important;
-  -o-transform: skew(#{$angle}deg) !important;
-}
-
-@mixin userSelect($arg) {
-  -webkit-user-select: $arg;
-  -moz-user-select: $arg;
-  -ms-user-select: $arg;
-  user-select: $arg;
 }
 
 @function calculateRem($size) {
@@ -68,12 +42,6 @@
 @mixin fontSizes($size) {
   font-size: $size; //Fallback in px
   font-size: calculateRem($size);
-}
-/* Cross browser opacity */
-@mixin opacity($opacity) {
-  opacity: $opacity;
-  $opacity-ie: $opacity * 100;
-  filter: alpha(opacity=$opacity-ie); //IE8
 }
 /* Media Queries */
 
@@ -131,7 +99,7 @@
   }
 }
 
-@mixin media($maxWidth) {
+@mixin mediaMax($maxWidth) {
   @media screen and (max-width: $maxWidth) {
     @content;
   }
