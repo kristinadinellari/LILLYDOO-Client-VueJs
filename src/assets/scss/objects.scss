@@ -43,6 +43,12 @@
     @include on-tablet {
       background-position: bottom;
     }
+    @include on-mobile {
+      background-size: contain !important;
+    }
+    @include mediaMin(768px) {
+      background-size: cover !important;
+    }
   }
   .content-holder {
     @include flex;
@@ -66,7 +72,6 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-
         span {
           @include fontSizes(54);
           text-align: center;
@@ -76,7 +81,6 @@
             @include fontSizes(40);
           }
         }
-
         button {
           @include fontSizes(20);
           background: $button-bg-color;
@@ -88,6 +92,9 @@
           @include on-mobile {
             margin: 30px 0;
           }
+        }
+        @include on-mobile {
+          justify-content: flex-end;
         }
       }
 
@@ -101,6 +108,13 @@
           @include on-desktop {
             justify-content: flex-end;
           }
+          @include on-tablet {
+            justify-content: flex-end !important;
+            margin-top: -70px;
+          }
+          @include on-mobile {
+            justify-content: flex-end !important;
+          }
           @include mediaMax(1300px) {
             width: 100%;
             justify-content: center;
@@ -110,14 +124,13 @@
             object-fit: contain;
             height: auto;
             @include transform(scale(.7));
-            right: 20px;
             @include on-mobile {
-              @include transform(scale(.5));
+              @include transform(scale(.4));
+              margin-right: -53px;
             }
           }
         }
       }
-
       @include on-mobile {
         width: 100%;
       }
@@ -346,6 +359,9 @@
   flex-direction: column;
   .title {
     width: 100%;
+  }
+  @include on-mobile {
+    justify-content: space-evenly;
   }
   .tester-holder {
     width: 100%;

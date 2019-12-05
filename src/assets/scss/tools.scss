@@ -105,3 +105,8 @@
   }
 }
 
+@mixin mediaMin($minWidth) {
+  @media screen and (max-width: $minWidth) {
+    @content;
+  }
+}
